@@ -12,7 +12,7 @@ describe('LinkedIn Login Test', () => {
     loginPage.visit();
   });
 
-  it.only('should successfully log in with valid credentials', () => {
+  it('should successfully log in with valid credentials', () => {
     // Get credentials from the fixture
     cy.fixture('loginData.json').then((loginData) => {
       const { username, password } = loginData;
@@ -26,7 +26,7 @@ describe('LinkedIn Login Test', () => {
     });
   });
 
-  it('should show an error for invalid credentials', () => {
+  it.only('should show an error for invalid credentials', () => {
     // Using invalid credentials
     cy.fixture('loginData.json').then((loginData) => {
       const { username } = loginData;
